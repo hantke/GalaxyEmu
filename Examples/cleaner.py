@@ -74,7 +74,7 @@ def clean(Arr):
     Arr['Clean']['fix_prop']         = copy.deepcopy(Arr['Raw']['fix_prop'])
     Arr['Clean']['nprint']           = 10
     Arr['Clean']['npoints']          = 20000
-    Arr['Clean']['niter']            = 400
+    Arr['Clean']['niter']            = 60
     Arr['Clean']['backup_frequency'] = 1000000 #Not really necesary for a quick PSO
     Arr['Clean']['c1']               = 0.4
     Arr['Clean']['c2']               = 0.2
