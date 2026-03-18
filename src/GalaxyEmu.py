@@ -29,8 +29,8 @@ class _GalaxyEmu():
         self.emulator_ID    = emulator_ID
 
         with h5py.File('%s/metadata_%s'%(network_adr,emulator_name), "r") as f:
-            #self.mean, self.std = f['meandata'].attrs['i0'], f['meandata'].attrs['i1']
-            self.mean, self.std = f['meandata'][0], f['meandata'][1]
+            try: self.mean, self.std = f['meandata'][0], f['meandata'][1]
+            except: self.mean, self.std = f['meandata'].attrs['i0'], f['meandata'].attrs['i1']
 
         self.emulator       = keras.models.load_model('%s/%s.keras'%(network_adr,emulator_name))
 
